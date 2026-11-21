@@ -1,0 +1,2 @@
+{% extends 'base.html' %}
+{% block content %}<section class="panel"><p class="eyebrow">TU ESPACIO CREATIVO</p><h1>{% if object %}Editar publicación{% else %}Una nueva historia{% endif %}</h1><form method="post" enctype="multipart/form-data">{% csrf_token %}{{ form.as_p }}<p class="meta">Imagen opcional: JPG, PNG o WEBP, hasta 5 MB.</p><div class="actions"><button>Guardar publicación</button><a href="{% url 'post_list' %}">Cancelar</a></div></form></section>{% endblock %}

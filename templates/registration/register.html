@@ -1,0 +1,2 @@
+{% extends 'base.html' %}
+{% block content %}<section class="panel"><p class="eyebrow">SUMÁ TU VOZ</p><h1>Crear cuenta</h1><form method="post">{% csrf_token %}{{ form.as_p }}<button>Registrarme</button></form><p>¿Ya tenés cuenta? <a href="{% url 'login' %}">Ingresá</a>.</p></section>{% endblock %}

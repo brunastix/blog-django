@@ -1,0 +1,2 @@
+{% extends 'base.html' %}
+{% block content %}<section class="reading"><p class="eyebrow">MI PERFIL</p><h1>Hola, {{ user.username }}.</h1><p>Miembro desde {{ user.date_joined|date:'d/m/Y' }}.</p><a class="button" href="{% url 'post_create' %}">Crear publicación</a><h2>Mis publicaciones</h2>{% for post in posts %}<p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a> · {{ post.created_at|date:'d/m/Y' }}</p>{% empty %}<p>Todavía no publicaste. ¡Empezá tu primera historia!</p>{% endfor %}</section>{% endblock %}
